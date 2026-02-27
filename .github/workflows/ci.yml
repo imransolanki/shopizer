@@ -17,3 +17,8 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
       - run: ./mvnw clean install
+      - uses: actions/upload-artifact@v4
+        with:
+          name: backend-jar
+          path: sm-shop/target/shopizer.jar
+          retention-days: 7
